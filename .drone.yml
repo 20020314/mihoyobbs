@@ -19,7 +19,7 @@ steps:
   - docker rm mihoyobbsv1
   - docker image prune -f
   - docker volume prune -f
-#
+# 初始化
 - name: 自动构建
   image: chaikair/dockeri:latest
   volumes:
