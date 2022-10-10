@@ -22,16 +22,9 @@ steps:
   - docker build -t chaikair/test:1 .
 # 部署
 - name: 自动部署
-  image: appleboy/drone-ssh
-  settings:
-    host: 
-      - 47.242.239.1
-    username: root
-    password: 4sTHjq0QfVj8
-    port: 22
-    command_timeout: 5m
-    script:
-      - docker run --name mihoyobbsv1 -d chaikair/test:1
+  image: chaikair/dockeri:latest
+  commands:
+  - docker run --name mihoyobbsv1 -d chaikair/test:1
 # 声明储存
 volumes:
 - name: cache
