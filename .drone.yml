@@ -40,7 +40,7 @@ steps:
   - name: docker-sock
     path: /var/run/docker.sock
   commands:
-  - docker run --name --restart=always  mihoyobbsv1 -d chaikair/test:1
+  - docker run --name mihoyobbsv1 -d --restart=always chaikair/test:1
 # 清理
 - name: 上传镜像
   image: chaikair/dockeri:latest
