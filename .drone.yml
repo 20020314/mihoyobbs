@@ -9,12 +9,12 @@ clone:
 steps:
 - name: 初始化环境
   image: chaikair/dockeri:latest
-  failure: ignore
   volumes:
   - name: cache
     path: /mi
   - name: docker-sock
     path: /var/run/docker.sock
+  failure: ignore
   commands:
   - docker stop mihoyobbsv1
   - docker rm mihoyobbsv1
