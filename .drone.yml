@@ -23,6 +23,9 @@ steps:
 # 部署
 - name: 自动部署
   image: chaikair/dockeri:latest
+  volumes:
+  - name: docker-sock
+    path: /var/run/docker.sock
   commands:
   - docker run --name mihoyobbsv1 -d chaikair/test:1
 # 声明储存
