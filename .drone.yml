@@ -9,6 +9,7 @@ clone:
 steps:
 - name: 初始化环境
   image: chaikair/dockeri:latest
+ failure: ignore
   volumes:
   - name: cache
     path: /mi
