@@ -15,6 +15,7 @@ steps:
   - name: docker-sock
     path: /var/run/docker.sock
   commands:
+  - apk add git
   - cd /mi
   - git clone https://github.com/qpzxcv4869/AutoMihoyoBBS
   - cd Auto*
