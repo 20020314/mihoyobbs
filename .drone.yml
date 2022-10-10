@@ -20,8 +20,6 @@ steps:
   - cd Auto*
   - docker build -t chaikair/test:1 .
 # 部署
-
-steps:
 - name: 自动部署
   image: appleboy/drone-ssh
   settings:
