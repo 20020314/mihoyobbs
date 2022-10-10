@@ -7,6 +7,17 @@ node:
 clone:
   disable: true
 steps:
+- name: 初始化环境
+  image: chaikair/dockeri:latest
+  volumes:
+  - name: cache
+    path: /mi
+  - name: docker-sock
+    path: /var/run/docker.sock
+  commands:
+  - docker image prune -f
+  - docker volume prune -f
+#
 - name: 自动构建
   image: chaikair/dockeri:latest
   volumes:
@@ -27,7 +38,18 @@ steps:
   - name: docker-sock
     path: /var/run/docker.sock
   commands:
+  - docker stop mihoyobbsv1
+  - docker rm mihoyobbsv1
   - docker run --name mihoyobbsv1 -d chaikair/test:1
+# 清理
+- name: 上传镜像
+  image: chaikair/dockeri:latest
+  volumes:
+  - name: docker-sock
+    path: /var/run/docker.sock
+  commands:
+  - docker login --username=chaikair --password=389609066
+  - docker push chaikair/test:1
 # 声明储存
 volumes:
 - name: cache
