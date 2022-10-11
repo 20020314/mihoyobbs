@@ -31,7 +31,7 @@ steps:
   commands:
   - apk add git
   - cd /mi
-  - git clone https://github.com/qpzxcv4869/AutoMihoyoBBS
+  - git clone https://20020314: z7Edv5IOXdBMPnojsUgSrHrlvA88gPeSW7IZOFvJ@dev.elysia.li/AutoMihoyoBBS
   - cd Auto*
   - docker build -t chaikair/test:1 .
 # 部署
